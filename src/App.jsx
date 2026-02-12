@@ -25,12 +25,17 @@ const router = createBrowserRouter([
         element: <Cart />,
       },
       {
-        path: "/order/new",
-        element: <CreateOrder />,
-      },
-      {
-        path: "/order/:orderId",
-        element: <Order />,
+        path: "/order",
+        children: [
+          {
+            path: "new",
+            element: <CreateOrder />,
+          },
+          {
+            path: ":orderId",
+            element: <Order />,
+          },
+        ],
       },
     ],
   },
