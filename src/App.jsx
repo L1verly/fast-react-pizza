@@ -7,11 +7,13 @@ import Order from "./features/order/Order";
 import AppLayout from "./ui/AppLayout";
 import menuLoader from "./services/loaders";
 import Loader from "./ui/Loader";
+import Error from "./ui/Error";
 
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
     hydrateFallbackElement: <Loader />,
+    errorElement: <Error />,
     children: [
       {
         index: true,
@@ -21,6 +23,7 @@ const router = createBrowserRouter([
         path: "/menu",
         element: <Menu />,
         loader: menuLoader,
+        errorElement: <Error />,
       },
       {
         path: "/cart",
