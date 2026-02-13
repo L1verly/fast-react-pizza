@@ -6,10 +6,12 @@ import CreateOrder from "./features/order/CreateOrder";
 import Order from "./features/order/Order";
 import AppLayout from "./ui/AppLayout";
 import menuLoader from "./services/loaders";
+import Loader from "./ui/Loader";
 
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
+    hydrateFallbackElement: <Loader />,
     children: [
       {
         index: true,

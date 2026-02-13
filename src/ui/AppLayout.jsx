@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 
 export default function AppLayout() {
   return (
-    <div>
+    <div className="layout">
       <Header />
       <main>
         <Outlet />
