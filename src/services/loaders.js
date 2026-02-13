@@ -1,6 +1,12 @@
-import { getMenu } from "./apiRestaurant";
+import { getMenu, getOrder } from "./apiRestaurant";
 
-export default async function loader() {
+export async function menuLoader() {
   const menu = await getMenu();
   return menu;
+}
+
+export async function orderLoader({ params }) {
+  const { orderId } = params;
+  const order = await getOrder(orderId);
+  return order;
 }
