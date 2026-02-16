@@ -1,12 +1,12 @@
 import { formatCurrency } from "../../utils/helpers";
 import Button from "../../ui/Button";
 import { useDispatch, useSelector } from "react-redux";
-import { addItem } from "../cart/cartSlice";
+import { addItem, getCart } from "../cart/cartSlice";
 function MenuItem({ pizza }) {
   const dispatch = useDispatch();
 
   const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
-  const cart = useSelector((state) => state.cart.cart);
+  const cart = useSelector(getCart);
   console.log(cart);
   function handleAddToCart() {
     // if (cart.some((item) => item.pizzaId === id))
