@@ -5,6 +5,7 @@ export default function Button({
   disabled = false,
   to = "",
   type = "primary",
+  onClick = () => {},
 }) {
   const base =
     "inline-block text-sm cursor-pointer rounded-full bg-yellow-400 font-semibold tracking-wide text-stone-800 uppercase transition-colors duration-300 hover:bg-yellow-500 focus:bg-yellow-500 focus:ring focus:ring-yellow-500 focus:ring-offset-2 focus:outline-none disabled:cursor-not-allowed ";
@@ -21,6 +22,13 @@ export default function Button({
         {children}
       </Link>
     );
+  if (onClick)
+    return (
+      <button onClick={onClick} className={styles[type]} disabled={disabled}>
+        {children}
+      </button>
+    );
+
   return (
     <button className={styles[type]} disabled={disabled}>
       {children}
