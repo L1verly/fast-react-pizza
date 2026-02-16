@@ -36,31 +36,35 @@ function CreateOrder() {
   const formErrors = useActionData();
 
   return (
-    <div>
-      <h2>Ready to order? Let's go!</h2>
+    <div className="px-4 py-6">
+      <h2 className="mb-8 text-xl font-semibold">Ready to order? Let's go!</h2>
 
       <Form method="POST" action="/order/new">
-        <div>
-          <label>First Name</label>
-          <FormInput type="text" name="customer" />
+        <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
+          <label className="sm:basis-40">First Name</label>
+          <FormInput type="text" name="customer" className="grow" />
         </div>
 
-        <div>
-          <label>Phone number</label>
-          <div>
-            <FormInput type="tel" name="phone" />
-          </div>
-          {formErrors?.phone && <p>{formErrors.phone}</p>}
-        </div>
-
-        <div>
-          <label>Address</label>
-          <div>
-            <FormInput type="text" name="address" />
+        <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
+          <label className="sm:basis-40">Phone number</label>
+          <div className="grow">
+            <FormInput type="tel" name="phone" className="w-full" />
+            {formErrors?.phone && (
+              <p className="mt-3 ml-4 text-xs text-red-400">
+                {formErrors.phone}
+              </p>
+            )}
           </div>
         </div>
 
-        <div>
+        <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
+          <label className="sm:basis-40">Address</label>
+          <div className="grow">
+            <FormInput type="text" name="address" className="w-full" />
+          </div>
+        </div>
+
+        <div className="mb-10 flex items-center gap-5">
           <input
             className="size-6 accent-yellow-500 focus:ring focus:ring-yellow-500 focus:ring-offset-400"
             type="checkbox"
