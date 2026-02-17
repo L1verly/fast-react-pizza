@@ -1,4 +1,5 @@
 export default function FormInput({
+  id,
   type,
   name,
   placeholder = "",
@@ -7,10 +8,13 @@ export default function FormInput({
   className = "",
   required = true,
   defaultValue = "",
+  disabled = false,
 }) {
   const props = {
     type,
     name,
+    disabled,
+    id,
     ...(placeholder && { placeholder: placeholder }),
     ...(value && { value: value }),
     ...(onChange && { onChange: onChange }),
