@@ -33,12 +33,16 @@ function Order() {
               Priority
             </span>
           )}
-
-          <span
-            className={`semibold rounded-full px-3 py-1 text-sm font-medium tracking-wide text-red-50 uppercase ${status === "delivered" ? "bg-green-500" : "bg-yellow-500"}`}
+          <div
+            className={`semibold flex items-center gap-2 rounded-full px-3 py-1 text-sm font-medium tracking-wide text-red-50 uppercase ${status === "delivered" ? "bg-green-500" : "bg-yellow-500"}`}
           >
-            {status} order
-          </span>
+            <span>{status} order</span>
+            {status === "preparing" && (
+              <div>
+                <div className="spinner"></div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
 
