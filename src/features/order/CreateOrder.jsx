@@ -75,7 +75,7 @@ function CreateOrder() {
 
         <div className="mb-10 flex items-center gap-5">
           <input
-            className="size-6 accent-yellow-500 focus:ring focus:ring-yellow-500 focus:ring-offset-400"
+            className="size-6 accent-yellow-500 focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 focus:outline-none"
             type="checkbox"
             name="priority"
             id="priority"
