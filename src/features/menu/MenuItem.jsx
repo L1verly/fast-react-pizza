@@ -8,6 +8,7 @@ import {
   increaseItemQuantity,
 } from "../cart/cartSlice";
 import RemoveItem from "../cart/RemoveItem";
+import UpdateItemQuantity from "../../ui/UpdateItemQuantity";
 function MenuItem({ pizza }) {
   const dispatch = useDispatch();
   const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
@@ -49,7 +50,12 @@ function MenuItem({ pizza }) {
             </p>
           )}
 
-          {isInCart && <RemoveItem pizzaId={id} />}
+          {isInCart && (
+            <div className="flex items-center gap-3 sm:gap-8">
+              <UpdateItemQuantity pizzaId={id} quantity={currentQuantity} />
+              <RemoveItem pizzaId={id} />
+            </div>
+          )}
 
           {!soldOut && !isInCart && (
             <Button onClick={handleAddToCart} type="small">

@@ -12,6 +12,7 @@ export default function Button({
   const styles = {
     primary: base + "px-4 py-3 md:px-6",
     small: base + "px-4 py-2 md:px-5 md:py-2.5 lg:px-6 lg:text-sm text-xs",
+    round: base + "px-2.5 py-1 md:px-3.5 md:py-2 lg:text-sm text-xs",
     secondary:
       "inline-block text-sm cursor-pointer rounded-full bg-transparent border-2 border-stone-300 font-semibold tracking-wide text-stone-500 uppercase transition-colors duration-300 hover:bg-stone-200 hover:text-stone-900 focus:bg-stone-300 focus:text-stone-900 focus:ring focus:ring-stone-200 focus:ring-offset-2 focus:outline-none disabled:cursor-not-allowed px-4 py-2.5 md:px-6",
   };
