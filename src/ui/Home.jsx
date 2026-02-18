@@ -6,14 +6,14 @@ import { getUsername } from "../features/user/userSlice";
 function Home() {
   const username = useSelector(getUsername);
   return (
-    <div className="my-10 text-center sm:my-16">
-      <h1 className="mb-8 text-center text-xl font-semibold text-stone-700 sm:text-2xl md:text-3xl">
-        The best pizza.
-        <br />
-        <span className="text-yellow-500">
+    <div className="mt-[30%] space-y-4 text-center sm:mt-[25%] sm:mb-10">
+      <div className="mb-8 space-y-3 text-center text-xl font-semibold sm:text-2xl md:text-3xl">
+        <h1 className="text-stone-700">The best pizza.</h1>
+        <h1 className="text-yellow-500">
           Straight out of the oven, straight to you.
-        </span>
-      </h1>
+        </h1>
+      </div>
+
       {username === "" ? (
         <CreateUser />
       ) : (
